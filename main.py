@@ -3,6 +3,9 @@ import NewsBot
 import json
 
 
+server_url = "http://localhost:8000/api/data/"
+
+
 def make_json():
     with open('keywords.txt', 'r') as keywords_file:
         keywords = keywords_file.read().split()
@@ -19,13 +22,11 @@ def make_json():
 
 def json_to_server(json_data):
 
-    url = "http://localhost:8000/api/data/"  # 서버 주소로 변경
-
     headers = {
         "Content-Type": "application/json"
     }
 
-    response = requests.post(url, data=json_data, headers=headers)
+    response = requests.post(server_url, data=json_data, headers=headers)
 
     if response.status_code == 201:
         print("JSON data successfully sent to the server.")
