@@ -48,13 +48,8 @@ def GoogleNews(keyword):
 
 
 if __name__ == "__main__":
-    # news_navse = NaverNews("개발자취업")
-    # for elem in news:
-    #     print(f'title : {elem["title"]}')
-    #     print(f'link : {elem["link"]}')
-    #     print()
     news_google = GoogleNews("개발자취업")
-    for elem in news_google:
-        print(f'title : {elem["title"]}')
-        print(f'link : {elem["link"]}')
-        print()
+    print(news_google)
+
+    news_naver = NaverNews("개발자취업")
+    print(news_naver)
