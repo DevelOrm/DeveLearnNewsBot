@@ -38,4 +38,4 @@ if __name__ == '__main__':
     json_data = make_json()
     print(json_data)
 
-    json_to_server(json_data)
+    # json_to_server(json_data)
