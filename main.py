@@ -3,7 +3,7 @@ import NewsBot
 import json
 
 
-server_url = "http://localhost:8000/api/data/"
+server_url = "http://127.0.0.1:8000/news/bot/"
 
 
 def make_json():
@@ -17,7 +17,7 @@ def make_json():
         for elem in news_naver+news_google:
             data[len(data)] = elem
 
-    return json.dumps(data, indent=4, ensure_ascii=False)
+    return json.dumps(data, indent=4, ensure_ascii=False).encode("utf-8")
 
 
 def json_to_server(json_data):
@@ -34,20 +34,8 @@ def json_to_server(json_data):
         print("Server Connetion Error")
 
 
-'''
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
-
-class JSONDataView(APIView):
-    def post(self, request, format=None):
-        data = request.data
-        return Response({'message': 'JSON data received successfully'}, status=status.HTTP_201_CREATED)
-'''
-
-
 if __name__ == '__main__':
     json_data = make_json()
     print(json_data)
 
-    # json_to_server(json_data)
+    json_to_server(json_data)

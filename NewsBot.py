@@ -36,7 +36,6 @@ def GoogleNews(keyword):
     if response.status_code == 200:
         html = response.text
         soup = BeautifulSoup(html, 'html.parser')
-        # print(soup)
 
         elements = soup.select("div.xrnccd > article > h3 > a")
         for i in elements:
