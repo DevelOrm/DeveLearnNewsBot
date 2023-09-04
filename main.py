@@ -3,7 +3,7 @@ import NewsBot
 import json
 
 
-server_url = "http://3.37.187.68:8000/news/bot/"
+server_url = "http://52.79.53.117/api/news/bot/"
 
 
 def make_json():
